@@ -1,0 +1,44 @@
+why double quoted literals in postgres/table.sql not working when run with docker?
+
+mysql vs postgres comparison use cases:
+1. create a table
+2. add a column
+3. rename a table
+4. move a column in the select view
+5. list all databases
+6. list all user defined databases
+7. list all schemas
+8. list all user defined schemas
+9. list all schemas in a database
+10. list tables accross all databases
+11. list tables for a database
+12. create a new schema	
+13. move a schema to a new database
+14. rename a database
+    alter database test rename to test2; -- for postgres. no such thing for mysql
+15. import csv file
+17. describe a table
+
+example data
+departments: hr, sales, finance, manufactoring, 
+
+hr department:
+
+table employee(id, first name, last name, dob, badge_no)
+employment_history (id, employee_id, start_date, end_date) 'hired', 'transferred', 'maternal leave', '
+table department(id, name, address) 
+
+
+16. are error messages easy to read and understand?
+postgres=# create table test (int id);
+ERROR:  type "id" does not exist
+LINE 1: create table test (int id);
+                               ^                   
+
+postgres=# create table test (int id);
+ERROR:  type "id" does not exist
+LINE 1: create table test (int id);
+                               ^ 
+
+MySQL [mysql]> create table test (int id);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'int id)' at line 1
