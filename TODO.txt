@@ -18,6 +18,8 @@ mysql vs postgres comparison use cases:
     alter database test rename to test2; -- for postgres. no such thing for mysql
 15. import csv file
 17. describe a table
+18. create a composite primary key on existing table,
+e.g. alter table chase0579 add primary key (post_date, amount, balance);
 
 example data
 departments: hr, sales, finance, manufactoring, 
