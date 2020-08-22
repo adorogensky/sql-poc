@@ -21,3 +21,7 @@ Cleanup:
 
 Challenges:
    C1. SQL to return member id (mid) and latest spoken language preference for members that have spoken language preferences 
+   C2. remove duplicate records (sqlite and others)
+   ```
+   DELETE FROM sms WHERE rowid NOT IN (SELECT min(rowid) FROM sms GROUP BY address, body)
+   ```
